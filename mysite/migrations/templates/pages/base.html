@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px
+}
+</style>
+</head>
+
+<body>
+
+<table style='float: left'>
+    <caption style='font-size:18px'>GDP</caption>
+    <tr>
+        <th style='font-size:16px'>realtime_start</th>
+        <th style='font-size:16px'>date</th>
+        <th style='font-size:16px'>value</th>
+    </tr>
+    {% for item in GDP_query_results %}
+        <tr>
+            <td style='font-size:16px'>{{ item.GDP_realtime_start }}</td>
+            <td style='font-size:16px'>{{ item.GDP_date }}</td>
+            <td style='font-size:16px'>{{ item.GDP_value }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<table style='float: right'>
+    <caption style='font-size:18px'>GNP</caption>
+    <tr>
+        <th style='font-size:16px'>realtime_start</th>
+        <th style='font-size:16px'>date</th>
+        <th style='font-size:16px'>value</th>
+    </tr>
+    {% for item in GNP_query_results %}
+        <tr>
+            <td style='font-size:16px'>{{ item.GNP_realtime_start }}</td>
+            <td style='font-size:16px'>{{ item.GNP_date }}</td>
+            <td style='font-size:16px'>{{ item.GNP_value }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
